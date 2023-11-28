@@ -31,21 +31,34 @@ app.post('/create-account', (req, res) => {
 
 app.post('/transfer-eth', async (req, res) => {
     const { from, to, value, privateKey } = req.body;
-    const account = web3.eth.accounts.privateKeyToAccount('0x8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63');
+    const account = web3.eth.accounts.privateKeyToAccount(privateKey);
     console.log(account);
-    const rawTransaction = {
-      from: account.address,
-      to: '0xDD660820a0e964D0efbc609EdaC01a7324c3f52C',
-      value: web3.utils.toHex(web3.utils.toWei('1', 'ether')),
-      gas: 21000,
-      gasPrice: 0
-  };
-  
-  account.signTransaction(rawTransaction)
-      .then(signedTx => web3.eth.sendSignedTransaction(signedTx.rawTransaction))
-      .then(receipt => console.log("Transaction receipt: ", receipt))
-      .catch(err => console.error(err));
+    
+    const transaction = {
+        from: account.address,
+        to: to,
+        value: web3.utils.toWei(value, 'ether'),
+        gas: 21000,
+        gasPrice: '0x0'
+    };
+
+    try {
+        // Sign the transaction
+        const signedTransaction = await web3.eth.accounts.signTransaction(transaction, privateKey);
+
+        // Send the signed transaction
+        const txReceipt = await web3.eth.sendSignedTransaction(signedTransaction.rawTransaction);
+
+        res.json({
+            message: 'Ether transferred successfully',
+            transactionHash: txReceipt.transactionHash
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: error.message });
+    }
 });
+
 
 app.get('/check-balance/:address', async (req, res) => {
   console.log(req.params.address);
@@ -242,12 +255,9 @@ app.post('/buy-item', async (req, res) => {
       // Estimate gas for the transaction
       const gas = await web3.eth.estimateGas(txData);
 
-      // Get the current gas price from the network
-      const gasPrice = await web3.eth.getGasPrice();
-
       // Assign the estimated gas and gasPrice to the transaction
       txData.gas = gas;
-      txData.gasPrice = gasPrice;
+      txData.gasPrice = 0;
 
       // Sign the transaction
       const signedTransaction = await web3.eth.accounts.signTransaction(txData, privateKey);
