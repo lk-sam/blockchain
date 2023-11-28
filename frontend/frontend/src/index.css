@@ -1,0 +1,224 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.connectwallet {
+  height:90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f7f8;
+}
+
+h1 {
+  color: #0c356a;
+}
+
+h2 {
+  margin: 0 0px 10px 0;
+  color: rgb(42, 42, 42);
+}
+
+.connectwallett {
+  display: flex;
+  width: 850px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 100px;
+  background-color: white;
+  border-radius: 2px;
+  border: 2px rgb(67, 67, 67) solid;
+}
+
+
+.connectwallettt{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f7f8;
+  min-height: 180vh;
+}
+#connentwalleth2 {
+  margin-bottom: 30px;
+}
+.disabledButton { 
+  background-color: #828282;
+  border: 0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px 15px;
+  list-style: none;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-color: #ffc436;
+  border: 0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px 15px;
+  list-style: none;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.button-29:hover {
+  background-color: #ff0000;
+}
+
+.blueheading {
+  height: 70px;
+  display: flex;
+
+  align-items: center;
+}
+
+.blueheading p {
+  font-size: 30px;
+  margin-left: 220px;
+}
+
+
+.checkbalance {
+  display: flex;
+  flex-direction: column;
+}
+
+#balanced {
+  margin: 0;
+}
+
+.outercontainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.label {
+  width: 80px;
+  margin: 0;
+  background-color: #2e4374;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px 0 0 6px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.labell{
+  width: 140px;
+  margin: 0;
+  background-color: #2e4374;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px 0 0 6px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:35px;
+}
+.answer {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 0 6px 6px 0;
+  border: 1px solid #2e4374;
+  color: #828282;
+}
+.buttoncontainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.createacc {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.createaccp{
+  margin:0;
+  font-size:15px;
+  font-weight:500;
+}
+
+.header {
+  background-color: #2e4374;
+  color: #fff;
+  padding: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  width:60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.nav li {
+  margin-right: 20px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
